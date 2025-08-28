@@ -22,7 +22,6 @@ object galvan {
     method aumentarSueldo(cantidad){
       sueldo = sueldo + cantidad
     }
-
 }
 
 object baigorria {
@@ -37,6 +36,6 @@ object baigorria {
   }
 
   method venderEmpanadas(cantidad) {
-    empanadasVendidas = cantidad
+    empanadasVendidas = empanadasVendidas + cantidad
   } 
 }
