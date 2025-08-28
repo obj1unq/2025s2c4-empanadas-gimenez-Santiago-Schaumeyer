@@ -1,10 +1,19 @@
 import empleados.*
 
+describe "baigorria" {
+  test "venderEmpanadas" {
+    baigorria.vender(500)
+    assert.equals(500, baigorria.empanadasVendidas())
+    baigorria.vender(300)
+    assert.equals(800, baigorria.empanadasVendidas())
+  }
+}
+
 test "punto1: Planteo inicial" {
 
-  baigorria.venderEmpanadas(500)
+  baigorria.vender(500)
   galvan.sueldo(20000)
-  baigorria.venderEmpanadas(300)
+  baigorria.vender(300)
   assert.equals(12000, baigorria.sueldo())
   assert.equals(20000, galvan.sueldo())
   

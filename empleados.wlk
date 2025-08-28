@@ -4,38 +4,42 @@ object gimenez {
     var fondo = 300000
 
     method pagarSueldo(empleado) {
-      fondo = fondo - empleado.cobrarSueldo() 
+      fondo = fondo - empleado.sueldo() 
     }
 
+    method fondo(){
+      return fondo
+    }
 
 }
 
 object galvan {
     var sueldo = 15000
-    var dineroTotal = 0
 
-    method cobrarSueldo(){
-      dineroTotal = dineroTotal + sueldo
-      return sueldo
+    // Setter
+    method sueldo(_cantidad){
+      sueldo = _cantidad
     }
-
-    method aumentarSueldo(cantidad){
-      sueldo = sueldo + cantidad
+    // Getter
+    method sueldo() {
+      return sueldo
     }
 }
 
 object baigorria {
   var empanadasVendidas = 0
-  var sueldo = 0
-  var dineroTotal = 0
 
-  method cobrarSueldo(){
-    sueldo = empanadasVendidas * 15
-    dineroTotal = dineroTotal + sueldo
-    return sueldo
+  const sueldoPorEmpanada = 15
+  
+  method sueldo(){
+    return empanadasVendidas * sueldoPorEmpanada
+  } 
+
+  method vender(cantidad) {
+    empanadasVendidas = empanadasVendidas + cantidad
   }
 
-  method venderEmpanadas(cantidad) {
-    empanadasVendidas = empanadasVendidas + cantidad
-  } 
+  //Getter  
+  method empanadasVendidas() = empanadasVendidas
+
 }
