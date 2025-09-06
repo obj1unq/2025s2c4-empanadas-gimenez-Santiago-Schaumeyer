@@ -1,5 +1,4 @@
 import empleados.*
-
 test "Qué hacen los empleados con lo que cobran" {
 	
   baigorria.vender(500)
@@ -14,3 +13,4 @@ test "Qué hacen los empleados con lo que cobran" {
   
  	
 }
+

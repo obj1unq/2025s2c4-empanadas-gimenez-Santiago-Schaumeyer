@@ -1,45 +1,57 @@
 //Escribir aqui los objetos
 
 object gimenez {
-    var fondo = 300000
+    var property fondo = 300000
 
     method pagarSueldo(empleado) {
       fondo = fondo - empleado.sueldo() 
+      empleado.cobrar()
     }
-
-    method fondo(){
-      return fondo
-    }
-
 }
 
 object galvan {
-    var sueldo = 15000
+    var property sueldo = 15000
+    var property totalCobrado = 0
+    var property dinero = 0
+    var property deuda = 0
 
-    // Setter
-    method sueldo(_cantidad){
-      sueldo = _cantidad
+    method cobrar() {
+      if (deuda >= sueldo) {
+        deuda = deuda - sueldo
+      } else {
+        dinero = dinero + (sueldo - deuda)
+        deuda = 0
+      }
     }
-    // Getter
-    method sueldo() {
-      return sueldo
+
+    method gastar(cantidad){
+      if (dinero >= cantidad){
+        dinero = dinero - cantidad
+      } else {
+        deuda = deuda + (cantidad - dinero)
+        dinero = 0
+      }
     }
+    
+
 }
 
 object baigorria {
-  var empanadasVendidas = 0
-
+  var property empanadasVendidas = 0
+  var property totalCobrado = 0
   const sueldoPorEmpanada = 15
   
-  method sueldo(){
-    return empanadasVendidas * sueldoPorEmpanada
-  } 
-
   method vender(cantidad) {
     empanadasVendidas = empanadasVendidas + cantidad
   }
 
-  //Getter  
-  method empanadasVendidas() = empanadasVendidas
+  method sueldo(){
+  return empanadasVendidas * sueldoPorEmpanada
+  } 
 
+  method cobrar(){
+    totalCobrado = totalCobrado + self.sueldo()
+    empanadasVendidas = 0
+  }
+  
 }
